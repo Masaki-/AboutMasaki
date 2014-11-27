@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>Paper Fortune</title>
+	<style type="text/css">
+	body{
+		background:url('http://www.beiz.jp/web/photos_S/wood-texture/wood-texture_beiz.jp_S47661.jpg');
+		background-size: cover;
+		text-align: center;
+		text-shadow:1px 1px white;
+	}
+	#result {
+		font-size: 300%;
+		text-shadow:1px 1px black;
+		color: white;
+	}
+	</style>
+</head>
+<body id="background">
+
+<h1>おみくじ</h1>
+<p>下のボタンを押してください。</br>今日のあなたの運勢を占います。</p>
+<button value="うらなう" onclick="fortune();">うらなう。。。</button>
+
+<p id="result">ここに今日の運勢が</br>表示されます。</p>
+
+<script type="text/javascript">
+function fortune() {
+	var fortune = ["大吉", "中吉", "小吉", "吉", "末吉"];
+	var result = Math.floor(Math.random() * 5);
+	document.getElementById("result").innerHTML = fortune[result];
+	
+	var backgroundImage = ["http://www.beiz.jp/web/photos_S/sea-ocean/sea-ocean_beiz.jp_S32294.jpg", "http://www.beiz.jp/web/photos_S/sea-ocean/sea-ocean_beiz.jp_S32511.jpg", "http://www.beiz.jp/web/photos_S/sea-ocean/sea-ocean_beiz.jp_S33811.jpg"];
+	var backgroundImageNumber = Math.floor(Math.random() * 3);
+	document.body.style.backgroundImage="url(" + backgroundImage[backgroundImageNumber] + ")";
+}</script>
+
+</body>
+</html>

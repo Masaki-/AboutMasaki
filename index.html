@@ -1,0 +1,146 @@
+
+<html lang="ja">
+<head>
+	 <meta charset="utf-8">
+	 <title>タイトル</title>
+	 <style type="text/css">
+     
+
+  body{
+  	 background:url(img/sakana.jpg);
+  	 
+  	 background-size: cover;
+  	 text-align: center;
+  	 color: white;
+  	 text-shadow:1px 1px black;
+  }
+  button{
+  	 font-size: 28px;
+  	 color: white;
+  	 text-shadow: 1px 1px #faa;
+  	 border-top: 3px  white;
+  	 border-left: none;
+  	 border-right: none;
+  	 border-bottom: 3px  white;
+  	 width: 24%;
+  	 margin-top: 8px 
+  }
+button:hover{
+	background:black;
+	cursor: pointer;
+}
+p{
+	width:  64%;
+	margin: 0 auto;
+}
+#play,#play2{height: 48px
+         
+         }
+</style>
+<title></title>
+
+
+
+
+</head>
+<body>
+<h1> <center>ミュージックプレイヤー	</center> </h1>
+<P><center>ORIGINAL & SAKANA CTION</center></p>
+
+
+	<button id="play">Aoi</button>
+	<button id="play2">夜の踊り子</button>
+	<button id="play3">オリジナル</button><br>
+	<button id="pause"><img src="img/pouse.png"></button>
+	<button id="random"><img src="img/shuffle.png"></button>
+	<button id="reload"><img src="img/Reload.png"></button>
+	<button id=""><img src="img/menu.png"></button>
+
+
+
+
+
+	<audio id="audio" src="08 Aoi.mp3">Your browser does not support the audio
+		element.</audio>
+		<audio id="audio2" src="04 夜の踊り子.mp3">Your browser does not support the audio
+		element.</audio2>
+		<audio id="audio3" src="tennis.mp3">Your browser does not support the audio
+		element.</audio3>
+
+	<script type="text/javascript">
+	
+	var myAudio=document.getElementById("audio");
+	var myAudio2=document.getElementById("audio2");
+	var myAudio3=document.getElementById("audio3");
+	var songIndex=0;
+    var randomIndex = false;
+	var currentAudio;
+
+
+
+
+
+  
+   document.getElementById('random').onclick = function() { random(); }
+	document.getElementById('play').onclick = function() {
+		pause();
+		currentAudio=myAudio
+		play();
+
+	}	
+
+	document.getElementById('play2').onclick = function() {
+		pause();
+		
+		currentAudio=myAudio2
+		play();
+	}
+
+	document.getElementById('play3').onclick = function() {
+		pause();
+		
+		currentAudio=myAudio3
+		play();
+	}
+	document.getElementById('pause').onclick = function() {
+		pause();
+	}
+	document.getElementById('reload').onclick = function() {
+		reload();
+	}
+
+	function play(){
+		currentAudio.play();
+	}
+    
+    function random(){
+    	var random=Math.floor(Math.random()*3);
+    	if(random==0)
+    	{ pause();
+    	 currentAudio=myAudio
+    	 play();}
+    	 else if(random==1){
+    	 	currentAudio=myAudio3
+    	 play();}
+    	 else{pause();
+    	       currentAudio=myAudio2
+    	       play();
+    	     }
+    }
+
+
+	function pause(){
+		myAudio.pause();
+		myAudio2.pause();
+		myAudio3.pause();
+	}
+    function reload(){
+	myAudio.load();
+	myAudio.play();
+
+	}
+
+
+</script>
+</body>
+</html>
